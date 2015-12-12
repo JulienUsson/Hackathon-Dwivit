@@ -30,6 +30,17 @@ app.controller('gestionController', function($scope, $http) {
 
 });
 
+app.controller('alerteController', function($scope) {
+	$scope.alertes=[
+								    { type: 'danger', message: 'Une révision est nécessaire avant la fin du mois.' },
+								    { type: 'warning', message: 'Pensez a faire vérifier vos pneus !' }
+								  ];
+
+	$scope.closeAlert = function(index) {
+		$scope.alertes.splice(index, 1);
+	};
+});
+
 app.controller('reparationController', function($scope, $http) {
 	$scope.reparations=[];
 	$http.get("./api/voitures/1/reparations").success(function(data){

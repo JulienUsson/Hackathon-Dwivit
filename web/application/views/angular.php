@@ -17,6 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="./assets/js/app.js"></script>
 	</head>
 	<body>
+		<div ng-controller="alerteController">
+		  <uib-alert ng-repeat="alerte in alertes" type="{{alerte.type}}" close="closeAlert($index)">{{alerte.message}}</uib-alert>
+		</div>
 		<div ng-view></div>
 	</body>
 </html>
