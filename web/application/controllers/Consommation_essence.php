@@ -28,4 +28,10 @@ class Consommation_essence extends CI_Controller {
 				echo json_encode("404 : Product #$id not found");
 		}
   }
+
+	public function view_all_voiture($id_voiture)
+	{
+		$data = $this->ce->get_all_voiture($id_voiture);
+		echo json_encode($data->result_array());
+	}
 }

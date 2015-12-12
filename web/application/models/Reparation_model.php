@@ -23,4 +23,10 @@ class Reparation_model extends CI_Model {
                      ->limit(1);
             return $this->db->get();
         }
+
+        function get_all_voiture($id_voiture)
+        {
+            return $this->db->order_by('date', 'DESC')
+                            ->get_where($this->table, array('id_voiture' => $id_voiture));
+        }
 }
