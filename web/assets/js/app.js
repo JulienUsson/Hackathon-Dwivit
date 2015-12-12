@@ -1,4 +1,4 @@
-var app = angular.module('Dwivit', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('Dwivit', ['ngRoute', 'ui.bootstrap', 'chart.js']);
 
 app.config(function($routeProvider) {
 	$routeProvider.
@@ -17,6 +17,10 @@ app.config(function($routeProvider) {
 			templateUrl : './assets/templates/consommation.html',
 			controller  : 'consommationController'
 		}).
+		when('/gestion/statistique', {
+			templateUrl : './assets/templates/statistique.html',
+			controller  : 'statistiqueController'
+		}).
     otherwise({
 			redirectTo: '/'
 		});
@@ -32,6 +36,19 @@ app.controller('reparationController', function($scope, $http) {
 		$scope.reparations=data;
 	});
 });
+
+app.controller('statistiqueController', function($scope, $http) {
+	$scope.reparations=[];
+	$http.get("./api/voitures/1/reparations").success(function(data){
+		$scope.reparations=data;
+	});
+
+	$scope.consommations=[];
+	$http.get("./api/voitures/1/consommations").success(function(data){
+		$scope.consommations=data;
+	});
+});
+
 
 app.controller('consommationController', function($scope, $http) {
 	$scope.form=[];

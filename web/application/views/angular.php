@@ -12,6 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="./assets/lib/angular.min.js"></script>
 		<script src="./assets/lib/angular-route.min.js"></script>
 		<script src="./assets/lib/ui-bootstrap.min.js"></script>
+		<script src="./assets/lib/Chart.min.js"></script>
+		<script src="./assets/lib/angular-chart.js"></script>
 		<script src="./assets/js/app.js"></script>
 	</head>
 	<body>
