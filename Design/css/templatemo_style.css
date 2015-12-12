@@ -84,6 +84,12 @@ th, td {
 	background-color: #3e9a3a;
 }
 
+iframe {
+	display: block;
+	width: 950px;
+	margin: auto;
+}
+
 .templatemo_title {
 	float: left;
 	font-size: 30px;
