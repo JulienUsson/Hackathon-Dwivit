@@ -25,18 +25,18 @@ http://www.templatemo.com/tm-407-solidity
 	<script src="js/jquery.flexslider.js"></script>
 
 	<script src="js/custom.js"></script>
-  <script src="js/jquery-1.10.2.min.js"></script>
+     <script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/jquery.lightbox.js"></script>
 	<script src="js/templatemo_custom.js"></script>
-  <script src="js/jquery-git2.js"></script><!-- previous next script -->
+    <script src="js/jquery-git2.js"></script><!-- previous next script -->
   </head>
   <body>
   <!-- title start -->
   	<div class="container">
     	<div class="row">
         	<div class="col-md-6 col-sm-6">
-            	<!--<div class="templatemo_title"><a href="/">Dwivit</a></div>-->
-              <!--<div class="templatemo_subtitle">Easy dwiving</div>-->
+            	<div class="templatemo_title"><a href="#">Dwivit</a></div>
+                <div class="templatemo_subtitle">Easy dwiving</div>
             </div>
             <!--<div class="col-md-6 col-sm-6">
             	<form id="search_form">
@@ -52,52 +52,16 @@ http://www.templatemo.com/tm-407-solidity
 		<div class="main-navigation">
       <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <!--<a class="navbar-brand" href="#">Dwivit</a>-->
-            <a class="templatemo_title" href="#">Dwivit</a>
-            <!--<span class="templatemo_subtitle">Easy dwiving</span>-->
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav main_menu">
-              <li><a class="show-1 templatemo_home active" href="#menu-1">Accueil</a></li>
-              <li><a class="show-2 templatemo_page2" href="#menu-2">Forfaits</a></li>
-              <li><a class="show-3 templatemo_page3" href="#menu-3">Services</a></li>
-              <li><a class="show-5 templatemo_page5" href="#menu-5">Réseau</a></li>
-              <!--<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>-->
-              <li>
-                <form class="navbar-form navbar-right">
-                <div class="form-group">
-                  <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Connexion</button>
-                <a class="btn btn-primary" href="inscription.html">Inscription</a>
-                </form>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#">Project name</a>-->
         </div>
-        <!--<div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
@@ -106,25 +70,57 @@ http://www.templatemo.com/tm-407-solidity
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Connexion</button>
-            <a class="btn btn-primary" href="inscription.html">Inscription</a>
+            <button type="submit" class="btn btn-primary">Inscription</button>
           </form>
-        </div>-->
+        </div><!--/.navbar-collapse -->
       </div>
     </nav>
+
+			<div class="container">
+            	<div class="row">
+            	<div class="col-md-12">
+                	<!-- This one in here is responsive menu for tablet and mobiles -->
+                  <div class="responsive-navigation visible-sm visible-xs">
+                   <a href="#" class="menu-toggle-btn">
+                    <i class="fa fa-bars fa-2x"></i>
+                  </a>
+       			 <div class="navigation responsive_menu">
+          			 <ul>
+					<li><a class="show-1 templatemo_home" href="#">Accueil</a></li>
+					<li><a class="show-2 templatemo_page2" href="#">Forfaits</a></li>
+					<li><a class="show-3 templatemo_page3" href="#">Services</a></li>
+					<li><a class="show-5 templatemo_page5" href="#">Réseau</a></li>
+				</ul>
+    	    </div> <!-- /.responsive_menu -->
+   		 </div> <!-- /responsive_navigation -->
+                </div>
+            </div>
+            </div>
+			<div class="container">
+				<div class="row">
+        <div class="col-md-12 navigation">
+						<div class="row main_menu">
+              <!--<div class="col-md-2"><a id="prev">Prev</a></div>-->
+							<div class="col-md-2"><a class="show-1 templatemo_home" href="#"><div class="fa"></div>Accueil</a></div>
+							<div class="col-md-2"><a class="show-2 templatemo_page2" href="#"><div class="fa"></div>Forfaits</a></div>
+							<div class="col-md-2"><a class="show-3 templatemo_page3" href="#"><div class="fa"></div>Services</a></div>
+							<div class="col-md-2"><a class="show-5 templatemo_page5" href="#"><div class="fa"></div>Réseau</a></div>
+              <!--<div class="col-md-2"><a id="next">Next</a></div>-->
+						</div>
+          </div>
+				</div>
+			</div>
 		</div>
 	</div>
+    <div id="menu-container">
 
-  <div id="menu-container">
 	<div class="divs">
 <!-- homepage start -->
 	<div class="content homepage" id="menu-1">
-	<div class="container2">
+	<div class="container">
     	<div class="row">
-        <p class="tagline">Adoptez une nouvelle façon d'avancer !</p>
-      </div>
-    	<div class="row">
-        <div class="col-md-12 slider">
-        <div class="main-slider">
+        	<div class="col-md-12">
+            	<div class="main-slider">
 				<div class="flexslider">
 					<ul class="slides">
 						<li>
@@ -159,12 +155,9 @@ http://www.templatemo.com/tm-407-solidity
 
 <!-- service start -->
 	<div class="content service" id="menu-2">
-    <div class="container2">
-      <div class="row">
-        <p class="tagline">Une voiture entretenue et un conducteur conseillé pour seulement 30€ par mois.</p>
-      </div>
+    <div class="container">
         <div class="row">
-        	<div class="col-md-12 texte">
+        	<div class="col-md-12">
         		<h1>Nos Forfaits</h1>
             <p>Avec nos forfaits d'entretien tout compris, vous êtes sûrs que votre voiture sera bien entretenue et prête à rouler en toute sécurité. L'assistance incluse vous permet de contacter les professionnels euromaster à tout moment pour vous conseiller.</p>
             <table class="table table-striped">
@@ -181,19 +174,19 @@ http://www.templatemo.com/tm-407-solidity
                   <td>A</td>
                   <td>30€/mois</td>
                   <td>35€/mois</td>
-                  <td><button type="button" class="btn btn-xs btn-info">Commander</button></td>
+                  <td><button type="button" class="btn btn-xs btn-info">Comander</button></td>
                 </tr>
                 <tr>
                   <td>B</td>
                   <td>35€/mois</td>
                   <td>40€/mois</td>
-                  <td><button type="button" class="btn btn-xs btn-info">Commander</button></td>
+                  <td><button type="button" class="btn btn-xs btn-info">Comander</button></td>
                 </tr>
                 <tr>
                   <td>B diesel</td>
                   <td>40€/mois</td>
                   <td>45€/mois</td>
-                  <td><button type="button" class="btn btn-xs btn-info">Commander</button></td>
+                  <td><button type="button" class="btn btn-xs btn-info">Comander</button></td>
                 </tr>
               </tbody>
             </table>
@@ -235,9 +228,9 @@ http://www.templatemo.com/tm-407-solidity
         </div>-->
     </div>
     <div class="clear"></div>
-    <div class="container2">
+    <div class="container">
     	<div class="row">
-        	<div class="col-md-12 texte">
+        	<div class="col-md-12">
             	<h1>Dans le détail</h1>
               <h3>Dans tous les forfaits</h3>
               Tous les forfaits d'entretien Dwivy® comprennent les révisions annuelles, le remplacement des pièces d'usures ainsi qu'une assistance en cas de panne. Votre budget
@@ -335,15 +328,9 @@ http://www.templatemo.com/tm-407-solidity
 
 <!-- portfolio start -->
 <div class="content portfolio" id="menu-3">
-  <div class="container2">
-    <div class="row">
-      <p class="tagline">Une gamme de services complète et des professionnels à votre écoute.</p>
-    </div>
-    <div class="row illustration">
-      <img src="images/mechanic.jpg" alt="Un professionnnel Dwivy® à votre écoute." />
-    </div>
+  <div class="container">
   		<div class="row">
-        <div class="col-md-12 texte">
+        <div class="col-md-12">
             <h1>Nos différents services</h1>
             <h3>Une assitance</h3>
             Tous les forfaits d'entretien Dwivy® comprennent les révisions annuelles, le remplacement des pièces d'usures ainsi qu'une assistance en cas de panne. Votre budget
@@ -493,16 +480,10 @@ http://www.templatemo.com/tm-407-solidity
 
 <!-- contact start -->
 <div class="content contact" id="menu-5">
-  <div class="container2">
-    <div class="row">
-      <p class="tagline">À proximité de chez vous, partout en Europe.</p>
-    </div>
-    <div class="row illustration">
-      <img src="images/reseau.jpg" alt="Un professionnnel Dwivy® à votre écoute." />
-    </div>
+  <div class="container">
   	<div class="row">
-    	<div class="col-md-12 texte">
-        	<h1>Notre réseau</h1>
+    	<div class="col-md-12">
+        	<h1>Contact us</h1>
           <h3>Un réseau de professionnels partout en Europe</h3>
           Tous les forfaits d'entretien Dwivy® comprennent les révisions annuelles, le remplacement des pièces d'usures ainsi qu'une assistance en cas de panne. Votre budget
           est maitrisé et vous n'avez plus à renoncer à un entretien trop cher. L'entretien comprend entre autres les révision, les pneumatiques, le freinage, la distribuetion, l'échappement ainsi
@@ -511,11 +492,8 @@ http://www.templatemo.com/tm-407-solidity
     </div>
       <div class="clear"></div>
     <div  class="row">
-    	<div class="col-md-12 texte">
+    	<div class="col-md-12">
         	<div class="templatemo_contactmap">
-          <iframe width="100%" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-            src="http://centres.euromaster.fr/search">
-          </iframe>
 		    	<div id="templatemo_map"></div>
         	</div>
         </div>
