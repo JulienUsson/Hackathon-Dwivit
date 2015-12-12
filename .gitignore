@@ -1,0 +1,15 @@
+#Tous les fichiers cachés et tmp
+.*
+~*
+*~
+
+#Sauf gitignore
+!.gitignore
+
+app/**/*
+app/*
+app/**
+
+ionic/**/*
+ionic/*
+ionic/**
