@@ -7,8 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Dwivit</title>
+		<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./assets/css/bootstrap-theme.min.css" rel="stylesheet">
 		<script src="./assets/lib/angular.min.js"></script>
 		<script src="./assets/lib/angular-route.min.js"></script>
+		<script src="./assets/lib/ui-bootstrap.min.js"></script>
 		<script src="./assets/js/app.js"></script>
 	</head>
 	<body>

@@ -5,6 +5,9 @@ app.config(function($routeProvider) {
     when('/', {
 			templateUrl : './assets/templates/home.html'
     }).
+		when('/gestion', {
+			templateUrl : './assets/templates/gestion.html'
+		}).
     otherwise({
 			redirectTo: '/'
 		});
