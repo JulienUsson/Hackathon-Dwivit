@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 12 Décembre 2015 à 14:34
+-- Généré le :  Sam 12 Décembre 2015 à 17:22
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `consommation_essence` (
   `id_consommation_essence` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `prix` float NOT NULL,
-  `litres` int(11) NOT NULL,
+  `litres` float NOT NULL,
   `id_voiture` int(11) NOT NULL,
   PRIMARY KEY (`id_consommation_essence`),
   KEY `id_vehicule` (`id_voiture`),
