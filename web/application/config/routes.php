@@ -49,6 +49,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'app';
+$route['recapitulatif/(:num)'] = 'app/recapitulatif/$1';
+
+//----------Contrat----------
+$route['api/contrats'] = 'contrat';
+$route['api/contrats/(:num)'] = 'contrat/view/$1';
+//----------Consommation_essence----------
+$route['api/consommations'] = 'consommation_essence';
+$route['api/consommations/(:num)'] = 'consommation_essence/view/$1';
+$route['api/voitures/(:num)/consommations'] = 'consommation_essence/view_all_voiture/$1';
+$route["api/create/consommations"] = "consommation_essence/create";
+//----------Marque----------
+$route['api/marques'] = 'marque';
+$route['api/marques/(:num)'] = 'marque/view/$1';
+//----------Modele_voiture----------
+$route['api/modeles'] = 'modele_voiture';
+$route['api/modeles/(:num)'] = 'modele_voiture/view/$1';
+$route['api/marques/(:num)/modeles'] = 'modele_voiture/view_all_marque/$1';
+//----------Reparation----------
+$route['api/reparations'] = 'reparation';
+$route['api/reparations/(:num)'] = 'reparation/view/$1';
+$route['api/voitures/(:num)/reparations'] = 'reparation/view_all_voiture/$1';
+//----------Type_reparation----------
+$route['api/reparations/types'] = 'type_reparation';
+$route['api/reparations/types/(:num)'] = 'type_reparation/view/$1';
+//----------Voiture----------
+$route['api/voitures'] = 'voiture';
+$route['api/voitures/(:num)'] = 'voiture/view/$1';
+//----------Users----------
+$route['api/users'] = 'user';
+$route['api/users/(:num)'] = 'user/view/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -1,0 +1,14 @@
+<div class="table-responsive">
+  <table class="table table-striped table-condensed">
+    <tr>
+      <th>Date</th>
+      <th>Réparation</th>
+      <th>Commentaire</th>
+    </tr>
+    <tr ng-repeat="r in reparations">
+      <td>{{r.date | date:'dd/MM/yyyy'}}</td>
+      <td>{{r.type_reparation}}</td>
+      <td>{{r.commentaire}}</td>
+    </tr>
+  </table>
+</div>
