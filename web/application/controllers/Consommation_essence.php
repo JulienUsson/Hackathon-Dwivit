@@ -7,19 +7,19 @@ class Consommation_essence extends CI_Controller {
 	{
 					parent::__construct();
 					$this->load->database();
-					$this->load->model("Consommation_essence_model", "ce");
+					$this->load->model("Consommation_essence_model", "conso");
 	}
 
 
   public function index()
   {
-      $data = $this->ce->get_all();
+      $data = $this->conso->get_all();
       echo json_encode($data->result_array());
   }
 
   public function view($id)
   {
-		$data = $this->ce->get_one($id);
+		$data = $this->conso->get_one($id);
 
 		if ($data->num_rows() > 0) {
 				echo json_encode($data->result_array()[0]);
@@ -31,7 +31,17 @@ class Consommation_essence extends CI_Controller {
 
 	public function view_all_voiture($id_voiture)
 	{
-		$data = $this->ce->get_all_voiture($id_voiture);
+		$data = $this->conso->get_all_voiture($id_voiture);
 		echo json_encode($data->result_array());
+	}
+
+	public function create()
+	{
+			$date = $this->input->post('date', TRUE);
+			$prix = $this->input->post('prix', TRUE);
+			$litres = $this->input->post('litres', TRUE);
+			$id_voiture = $this->input->post('id_voiture', TRUE);
+			$this->conso->post($date, $prix, $litres, $id_voiture);
+			echo json_encode('Product created');
 	}
 }

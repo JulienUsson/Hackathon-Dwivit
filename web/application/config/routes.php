@@ -58,6 +58,7 @@ $route['api/contrats/(:num)'] = 'contrat/view/$1';
 $route['api/consommations'] = 'consommation_essence';
 $route['api/consommations/(:num)'] = 'consommation_essence/view/$1';
 $route['api/voitures/(:num)/consommations'] = 'consommation_essence/view_all_voiture/$1';
+$route["api/create/consommations"] = "consommation_essence/create";
 //----------Marque----------
 $route['api/marques'] = 'marque';
 $route['api/marques/(:num)'] = 'marque/view/$1';
