@@ -1,1 +1,19 @@
-<p>test</p>
+<div class="row">
+  <div class="bande">
+    <p>Adoptez une nouvelle façon d'avancer !</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="carousel">
+    <uib-carousel interval="5000">
+      <uib-slide ng-repeat="slide in slides">
+        <img ng-src="{{slide.image}}">
+        <div class="carousel-caption">
+          <h1>{{slide.titre}}</h1>
+          <p>{{slide.texte}}</p>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
+</div>

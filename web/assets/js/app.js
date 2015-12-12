@@ -1,9 +1,10 @@
-var app = angular.module('Dwivit', ['ngRoute', 'ui.bootstrap', 'chart.js']);
+var app = angular.module('Dwivit', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'chart.js']);
 
 app.config(function($routeProvider) {
 	$routeProvider.
     when('/', {
-			templateUrl : './assets/templates/home.html'
+			templateUrl : './assets/templates/home.html',
+			controller  : 'homeController'
     }).
 		when('/gestion', {
 			templateUrl : './assets/templates/gestion.html',
@@ -26,15 +27,32 @@ app.config(function($routeProvider) {
 		});
 });
 
+app.run(function($rootScope, $http) {
+    $rootScope.loggedIn=false;
+});
+
+app.controller('homeController', function($rootScope, $scope, $http) {
+	$scope.slides=[
+		{image: "assets/img/slide1.jpg", titre: "Un forfait tout compris", texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
+		{image: "assets/img/slide2.jpg", titre: "Une solution simple", texte: "Vous adaptez votre forfait à votre véhicule."},
+		{image: "assets/img/slide3.jpg", titre: "Pas de mauvaise surprise", texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
+	]
+});
+
+app.controller('menuController', function($scope, $http) {
+});
+
 app.controller('gestionController', function($scope, $http) {
 
 });
 
-app.controller('alerteController', function($scope) {
-	$scope.alertes=[
-								    { type: 'danger', message: 'Une révision est nécessaire avant la fin du mois.' },
-								    { type: 'warning', message: 'Pensez a faire vérifier vos pneus !' }
-								  ];
+app.controller('alerteController', function($rootScope, $scope) {
+	if($rootScope.loggedIn) {
+		$scope.alertes=[
+			{ type: 'danger', message: 'Une révision est nécessaire avant la fin du mois.' },
+			{ type: 'warning', message: 'Pensez a faire vérifier vos pneus !' }
+		];
+	}
 
 	$scope.closeAlert = function(index) {
 		$scope.alertes.splice(index, 1);

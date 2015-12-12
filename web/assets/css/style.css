@@ -1,0 +1,43 @@
+body {
+  min-height: 100%;
+  padding-top: 45px;
+}
+
+.bande {
+  background-color: #3E9A3A;
+  padding: 75px 0;
+}
+
+.bande p {
+  width: 80%;
+  margin: auto;
+  font-size: 55px;
+  line-height: 55px;
+  text-align: center;
+  color: white;
+}
+
+.carousel {
+  background-color: black;
+}
+
+.carousel .carousel-inner{
+  height: 500px;
+}
+
+.carousel img {
+  width: 100%;
+  opacity: 0.4;
+}
+
+.carousel .carousel-caption {
+  top:200px;
+}
+
+.alertes {
+  padding-top: 5px;
+}
+
+.alert {
+  margin-bottom: 5px;
+}
