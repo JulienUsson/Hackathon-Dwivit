@@ -6,19 +6,19 @@ app.config(function($routeProvider) {
 			templateUrl : './assets/templates/home.html',
 			controller  : 'homeController'
     }).
-		when('/gestion', {
+		when('/compte', {
 			templateUrl : './assets/templates/gestion.html',
 			controller  : 'gestionController'
 		}).
-		when('/gestion/reparation', {
+		when('/compte/reparation', {
 			templateUrl : './assets/templates/reparation.html',
 			controller  : 'reparationController'
 		}).
-		when('/gestion/consommation', {
+		when('/compte/consommation', {
 			templateUrl : './assets/templates/consommation.html',
 			controller  : 'consommationController'
 		}).
-		when('/gestion/statistique', {
+		when('/compte/statistique', {
 			templateUrl : './assets/templates/statistique.html',
 			controller  : 'statistiqueController'
 		}).
@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
 		});
 });
 
-app.run(function($rootScope, $http) {
+app.run(function($rootScope) {
     $rootScope.loggedIn=false;
 });
 
@@ -36,10 +36,25 @@ app.controller('homeController', function($rootScope, $scope, $http) {
 		{image: "assets/img/slide1.jpg", titre: "Un forfait tout compris", texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
 		{image: "assets/img/slide2.jpg", titre: "Une solution simple", texte: "Vous adaptez votre forfait à votre véhicule."},
 		{image: "assets/img/slide3.jpg", titre: "Pas de mauvaise surprise", texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
-	]
+	];
 });
 
-app.controller('menuController', function($scope, $http) {
+app.controller('menuController', function($rootScope, $scope, $http, $location, $anchorScroll, $window) {
+	$scope.login = function() {
+		$rootScope.loggedIn=true;
+		$location.url('/compte');
+	};
+
+	$scope.scrollTo = function(anchor) {
+		if(anchor=="top") {
+			$window.scrollTo(0,0);
+		}
+		else {
+			$location.hash(anchor);
+			$anchorScroll.yOffset = 50;
+			$anchorScroll();
+		}
+	}
 });
 
 app.controller('gestionController', function($scope, $http) {
@@ -47,12 +62,10 @@ app.controller('gestionController', function($scope, $http) {
 });
 
 app.controller('alerteController', function($rootScope, $scope) {
-	if($rootScope.loggedIn) {
 		$scope.alertes=[
 			{ type: 'danger', message: 'Une révision est nécessaire avant la fin du mois.' },
 			{ type: 'warning', message: 'Pensez a faire vérifier vos pneus !' }
 		];
-	}
 
 	$scope.closeAlert = function(index) {
 		$scope.alertes.splice(index, 1);

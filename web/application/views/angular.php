@@ -29,31 +29,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Dwivit</a>
+		      <a class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
 		    </div>
 
-		    <div class="collapse navbar-collapse" uib-collapse="!isOpen">
-		      <ul class="nav navbar-nav">
-		        <li><a href="#">Forfaits</a></li>
-		        <li><a href="#">Services</a></li>
-		        <li><a href="#">Réseau</a></li>
-		      </ul>
-		      <form class="navbar-form navbar-right" role="search">
-		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="E-mail">
-		        </div>
-						<div class="form-group">
-							<input type="password" class="form-control" placeholder="Mot de passe">
-						</div>
-		        <button type="submit" class="btn btn-default">Connexion</button>
-		      </form>
-		    </div>
+				<div ng-hide="loggedIn">
+			    <div class="collapse navbar-collapse" uib-collapse="!isOpen">
+			      <ul class="nav navbar-nav">
+			        <li><a ng-click="scrollTo('forfaits')" href="">Forfaits</a></li>
+			        <li><a ng-click="scrollTo('services')" href="">Services</a></li>
+			        <li><a ng-click="scrollTo('reseau')" href="">Réseau</a></li>
+			      </ul>
+			      <form ng-submit="login()" class="navbar-form navbar-right" role="search">
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="E-mail">
+			        </div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Mot de passe">
+							</div>
+			        <button type="submit" class="btn btn-default">Connexion</button>
+			      </form>
+			    </div>
+				</div>
+
+				<div ng-show="loggedIn">
+					<div class="collapse navbar-collapse" uib-collapse="!isOpen">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="">Réparations</a></li>
+							<li><a href="">Consommation</a></li>
+							<li><a href="">Stastiques</a></li>
+							<li><a ng-click="scrollTo('reseau')" href="">Déconnexion</a></li>
+						</ul>
+					</div>
+				</div>
 
 		  </div>
 		</nav>
 
 		<div class="container-fluid">
-			<div class="row">
+			<div ng-show="loggedIn" class="row">
 				<div class="alertes" ng-controller="alerteController">
 					<uib-alert ng-repeat="alerte in alertes" type="{{alerte.type}}" close="closeAlert($index)">{{alerte.message}}</uib-alert>
 				</div>
