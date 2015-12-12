@@ -29,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
-					<a class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
+		      <a ng-hide="loggedIn" class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
+					<a ng-show="loggedIn" class="navbar-brand" href="/#/compte/">DWIVIT</a>
 		    </div>
 
 				<div ng-hide="loggedIn">
