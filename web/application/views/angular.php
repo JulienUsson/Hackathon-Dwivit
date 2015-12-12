@@ -30,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <span class="icon-bar"></span>
 		      </button>
 		      <a class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
+					<a class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
 		    </div>
 
 				<div ng-hide="loggedIn">
@@ -54,10 +55,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div ng-show="loggedIn">
 					<div class="collapse navbar-collapse" uib-collapse="!isOpen">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="">Réparations</a></li>
-							<li><a href="">Consommation</a></li>
-							<li><a href="">Stastiques</a></li>
-							<li><a ng-click="scrollTo('reseau')" href="">Déconnexion</a></li>
+							<li><a href="/#/compte/reparation/">Réparations</a></li>
+							<li><a href="/#/compte/consommation/">Consommation</a></li>
+							<li><a href="/#/compte/statistique/">Stastiques</a></li>
+							<li><a ng-click="logout()" href="">Déconnexion</a></li>
 						</ul>
 					</div>
 				</div>

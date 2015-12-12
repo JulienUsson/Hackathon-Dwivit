@@ -45,6 +45,11 @@ app.controller('menuController', function($rootScope, $scope, $http, $location, 
 		$location.url('/compte');
 	};
 
+	$scope.logout = function() {
+		$rootScope.loggedIn=false;
+		$location.url('/');
+	};
+
 	$scope.scrollTo = function(anchor) {
 		if(anchor=="top") {
 			$window.scrollTo(0,0);
