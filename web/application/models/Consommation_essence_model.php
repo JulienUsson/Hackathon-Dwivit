@@ -35,14 +35,13 @@ class Consommation_essence_model extends CI_Model {
         function post($date, $prix, $litres, $id_voiture)
         {
             $data = array(
-                "title" => $title,
                 "date" => $date,
                 "prix" => $prix,
                 "litres" => $litres,
                 "id_voiture" => $id_voiture
             );
-
             $this->db->insert($this->table, $data);
+            return $this->db->insert_id();
         }
 
 }

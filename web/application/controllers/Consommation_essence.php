@@ -37,11 +37,8 @@ class Consommation_essence extends CI_Controller {
 
 	public function create()
 	{
-			$date = $this->input->post('date', TRUE);
-			$prix = $this->input->post('prix', TRUE);
-			$litres = $this->input->post('litres', TRUE);
-			$id_voiture = $this->input->post('id_voiture', TRUE);
-			$this->conso->post($date, $prix, $litres, $id_voiture);
-			echo json_encode('Product created');
+			$post = json_decode(file_get_contents("php://input"));
+			$id=$this->conso->post($post->date, $post->prix, $post->litres, $post->id_voiture);
+			$this->view($id);
 	}
 }
