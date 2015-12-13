@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<script src="./assets/js/app.js"></script>
 	</head>
 	<body>
-		<nav ng-controller="menuController" class="navbar navbar-default navbar-fixed-top">
+		<nav ng-controller="menuController" class="navbar navbar-inverse navbar-fixed-top">
 		  <div class="container-fluid">
 
 		    <div class="navbar-header">
@@ -29,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a ng-hide="loggedIn" class="navbar-brand" ng-click="scrollTo('top')" href="">DWIVIT</a>
-					<a ng-show="loggedIn" class="navbar-brand" href="/#/compte/">DWIVIT</a>
+		      <a ng-hide="loggedIn" class="navbar-brand" ng-click="scrollTo('top')" href="">DWIV<span class="jaune">IT</span></a>
+					<a ng-show="loggedIn" class="navbar-brand" href="/#/compte/">DWIV<span class="jaune">IT</span></a>
 		    </div>
 
 				<div ng-hide="loggedIn">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<div class="form-group">
 								<input type="password" class="form-control" placeholder="Mot de passe">
 							</div>
-			        <button type="submit" class="btn btn-default">Connexion</button>
+			        <button type="submit" class="btn btn-success">Connexion</button>
 			      </form>
 			    </div>
 				</div>

@@ -5,11 +5,39 @@ body {
 
 .navbar-brand {
   color: #3E9A3A !important;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+
+.btn:hover, .btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-success:hover {
+  background-color: #4CBF4A;
+  border-color: #3E9A3A;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+    color: #FFF;
+    background-color: #47A447 !important;
+    border-color: #398439 !important;
+}
+
+.jaune {
+    color: #F4DC1C;
 }
 
 .texte {
   padding: 20px 5%;
   margin: auto;
+  line-height: 26px;
 }
 
 
@@ -51,6 +79,7 @@ body {
   line-height: 55px;
   text-align: center;
   color: white;
+    text-transform: uppercase;
 }
 
 .footer {
@@ -81,7 +110,15 @@ body {
 }
 
 .carousel .carousel-caption {
-  top: 200px;
+  top: 100px;
+}
+
+.carousel .carousel-caption h1 {
+  font-size: 80px;
+}
+
+.carousel .carousel-caption p {
+  font-size: 24px;
 }
 
 .illustration {
