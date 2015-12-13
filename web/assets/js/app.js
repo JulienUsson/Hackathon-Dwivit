@@ -178,7 +178,11 @@ app.controller('statistiqueController', function($rootScope, $scope, $http, $loc
 		$scope.graphs.consoPrix.labels=$scope.graphs.consoQte.labels.slice();
 		$scope.graphs.consoPrix.data=[prix.reverse()];
 		$scope.graphs.consoL100.labels=$scope.graphs.consoQte.labels.slice();
-		$scope.graphs.consoL100.data=[l100.reverse()];
+		l100=l100.reverse();
+		l100.shift();
+		$scope.graphs.consoL100.data=[l100];
+		$scope.graphs.consoL100.labels=$scope.graphs.consoQte.labels.slice();
+		$scope.graphs.consoL100.labels.shift();
 	});
 });
 
