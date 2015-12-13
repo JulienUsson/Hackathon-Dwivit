@@ -1,0 +1,33 @@
+/* Empty. Add your own CSS if you like */
+
+.modal_center {
+	-webkit-display: flex;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
+}
+
+.my_blue {
+	color: #032181 !important;
+}
+.my_green {
+	color: #3E9A3A !important;
+}
+.my_yellow {
+	color: #F4DC1C !important;
+}
+.my_white {
+	color: white !important;
+}
+.my_bg_blue {
+	background-color: #032181 !important;
+}
+.my_bg_green {
+	background-color: #3E9A3A !important;
+}
+.my_bg_yellow {
+	background-color: #F4DC1C !important;
+}
+
+#HEAD .title, #HEAD .buttons *{
+	color: white !important;
+}

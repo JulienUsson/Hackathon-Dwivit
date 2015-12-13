@@ -1,0 +1,56 @@
+<script id="modal_consos.html" type="text/ng-template">
+  <ion-modal-view class="modal_center">
+    <ion-header-bar>
+      <h1 class="title">Ajouter une consommation</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+    	<form class="list" ng-submit="submitModal(litres, total)">
+			<label class="item item-input">
+				<input type="number" placeholder="Litres" ng-model="litres" pattern="[1-9][0-9]*\.?[0-9]{0,2}"/>
+			</label>
+			<label class="item item-input">
+				<input type="number" placeholder="Prix total" ng-model="total" pattern="[1-9][0-9]*\.?[0-9]{0,2}"/>
+			</label>
+			<label class="item item-input">
+				<input type="date" placeholder="Date" ng-model="date" />
+			</label>
+			<button class="button button-block button-positive">
+				Envoyer
+			</button>
+		</form>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<ion-view view-title="Consommation">
+  <ion-content class="padding">
+	<h2 class="header">Consommations</h2>
+
+	<div class="text-center padding">
+		<button ng-click="openModal()" class="button button-balanced">
+			Ajouter
+		</button>
+	</div>
+	<ion-item class="row header bar bar-stable">
+		<div class="col col-25">Date</div>
+		<div class="col col-20">Litres</div>
+		<div class="col col-25">€/L</div>
+		<div class="col col-25">Total</div>
+	</ion-item>
+	<ion-item class="row padding" ng-repeat="c in consommations"
+	>
+		<div class="col col-25" style="font-size: 0.8rem;">{{c.date | date:'dd/MM/yyyy'}}</div>
+		<div class="col col-20">{{c.litres}}</div>
+		<div class="col col-25">{{c.prix_litre}}</div>
+		<div class="col col-25">{{c.prix}} €</div>
+	</ion-item>
+
+	<ion-item>
+		<div>
+			Total des dépenses : <span class="assertive">{{calcTotalConso()}} €</span>
+		</div>
+	</ion-item>
+
+  </ion-content>
+</ion-view>

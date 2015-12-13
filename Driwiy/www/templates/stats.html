@@ -1,0 +1,31 @@
+<ion-view view-title="Statistiques">
+  <ion-content class="padding">
+      <div class="card">
+        <h3 class="item header my_bg_green my_white">Interventions sur la voiture</h3>
+        <div class="item">
+          <canvas id="bar" class="chart chart-bar"
+            chart-data="graphs.reparation.data" chart-colours="['#97BBCD']" chart-labels="graphs.reparation.labels" chart-series="graphs.reparation.series">
+          </canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="item header my_bg_green my_white">Consommation en litres</h3>
+        <div class="item">
+          <canvas id="line" class="chart chart-line" chart-data="graphs.consoQte.data"
+            chart-labels="graphs.consoQte.labels" chart-colours="['#F7464A']" chart-series="graphs.consoQte.series">
+          </canvas>
+        </div>
+      </div>
+
+
+    <div class="card">
+      <h3 class="item header my_bg_green my_white">Evolution du prix au litre en euro</h3>
+      <div class="item">
+        <canvas id="line" class="chart chart-line" chart-colours="['#FDB45C']" chart-data="graphs.consoPrix.data" chart-labels="graphs.consoPrix.labels" chart-series="graphs.consoPrix.series">
+        </canvas>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

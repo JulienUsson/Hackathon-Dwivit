@@ -6,10 +6,8 @@
 #Sauf gitignore
 !.gitignore
 
-app/**/*
-app/*
-app/**
 
-ionic/**/*
-ionic/*
-ionic/**
+Driwiy/hooks
+Driwiy/platforms
+Driwiy/plugins
+Driwiy/scss

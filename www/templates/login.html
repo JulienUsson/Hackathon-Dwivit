@@ -1,0 +1,18 @@
+<ion-view hide-nav-bar="true" view-title="Informations">
+	<ion-content class="padding" style="width: 80%;margin: 20% auto">
+		<h1>Dwivit</h1>
+		<p>Easy to dwivit</p>
+
+		<form class="list" ng-submit="submitLogin(pseudo, pwd)">
+			<label class="item item-input">
+				<input type="text" placeholder="Pseudo" ng-model="pseudo" pattern="[1-9][0-9]*\.?[0-9]{0,2}"/>
+			</label>
+			<label class="item item-input">
+				<input type="password" placeholder="Mot de passe" ng-model="pwd" />
+			</label>
+			<button class="button button-block button-positive">
+				Se connecter
+			</button>
+		</form>
+	</ion-content>
+</ion-view>

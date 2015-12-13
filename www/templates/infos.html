@@ -1,0 +1,21 @@
+<ion-view view-title="Informations">
+  <ion-content>
+    <div class="list card">
+    	<div class="item item-avatar">
+		    <img src="img/person.png">
+		    <h3>Bonjour {{user.prenom}} {{user.nom}}</h3>
+		</div>
+		<div class="list">
+			<p class="item">Email : {{user.email}}</p>
+			<p class="item">Ville : {{user.ville}} {{user.code_postal}}</p>
+		</div>
+		<div class="list">
+			<p class="item">Voiture : {{voiture.immatriculation}}</p>
+			<p class="item">Modèle : Peugeot Clio</p>
+			<p class="item">Carburant : Diesel</p>
+			<p class="item">Contrat : {{contrat.nom}} - 30€/mois</p>
+		</div>
+
+    </div>
+  </ion-content>
+</ion-view>
