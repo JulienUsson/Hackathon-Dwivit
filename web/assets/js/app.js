@@ -31,11 +31,11 @@ app.run(function($rootScope) {
     $rootScope.loggedIn=false;
 });
 
-app.controller('homeController', function($rootScope, $scope, $http) {
+app.controller('homeController', function($rootScope, $scope, $http, $sce) {
 	$scope.slides=[
-		{image: "assets/img/slide1.jpg", titre: "Un forfait tout compris", texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
-		{image: "assets/img/slide2.jpg", titre: "Une solution simple", texte: "Vous adaptez votre forfait à votre véhicule."},
-		{image: "assets/img/slide3.jpg", titre: "Pas de mauvaise surprise", texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
+		{image: "assets/img/slide1.jpg", titre: $sce.trustAsHtml('Un forfait <span class="jaune">tout compris</span>'), texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
+		{image: "assets/img/slide2.jpg", titre: $sce.trustAsHtml('Une solution <span class="jaune">simple</span>'), texte: "Vous adaptez votre forfait à votre véhicule."},
+		{image: "assets/img/slide3.jpg", titre: $sce.trustAsHtml('Pas de mauvaise <span class="jaune">surprise</span>'), texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
 	];
 });
 

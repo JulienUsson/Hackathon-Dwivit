@@ -10,7 +10,7 @@
       <uib-slide ng-repeat="slide in slides">
         <img ng-src="{{slide.image}}">
         <div class="carousel-caption">
-          <h1>{{slide.titre}}</h1>
+          <h1 ng-bind-html="slide.titre"></h1>
           <p>{{slide.texte}}</p>
         </div>
       </uib-slide>
