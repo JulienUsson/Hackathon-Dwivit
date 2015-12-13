@@ -145,6 +145,10 @@ app.controller('statistiqueController', function($rootScope, $scope, $http, $loc
 	$scope.graphs.consoPrix.series = ['Prix au litre'];
 	$scope.graphs.consoPrix.labels=[];
 	$scope.graphs.consoPrix.data=[];
+	$scope.graphs.consoL100=[];
+	$scope.graphs.consoL100.series = ['Litres au 100'];
+	$scope.graphs.consoL100.labels=[];
+	$scope.graphs.consoL100.data=[];
 	$scope.graphs.reparation=[];
 	$scope.graphs.reparation.series = ["Nombre d'intervention"];
 	$scope.graphs.reparation.labels=[];
@@ -158,14 +162,23 @@ app.controller('statistiqueController', function($rootScope, $scope, $http, $loc
 	$http.get("./api/voitures/1/consommations").success(function(data){
 		var prix=[];
 		var quantite=[];
+		var l100=[];
 		data.forEach(function(element, index, array) {
 			$scope.graphs.consoQte.labels.push(element["date"]);
 			prix.push(element["prix_litre"]);
 			quantite.push(element["litres"]);
+			if((index+1)<array.length)
+				l100.push((element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100);
+			else {
+				l100.push(0);
+			}
 		});
-		$scope.graphs.consoQte.data=[quantite];
+		$scope.graphs.consoQte.labels.reverse();
+		$scope.graphs.consoQte.data=[quantite.reverse()];
 		$scope.graphs.consoPrix.labels=$scope.graphs.consoQte.labels.slice();
-		$scope.graphs.consoPrix.data=[prix];
+		$scope.graphs.consoPrix.data=[prix.reverse()];
+		$scope.graphs.consoL100.labels=$scope.graphs.consoQte.labels.slice();
+		$scope.graphs.consoL100.data=[l100.reverse()];
 	});
 });
 
@@ -177,6 +190,7 @@ app.controller('consommationController', function($rootScope, $scope, $http, $lo
 	$scope.form=[];
 	$scope.form.date = new Date();
 	$scope.form.prix = '';
+	$scope.form.compteur_km = '';
 	$scope.form.litres = '';
 	$scope.status=[];
 	$scope.status.opened=false;
@@ -184,6 +198,13 @@ app.controller('consommationController', function($rootScope, $scope, $http, $lo
 	$scope.consommations=[];
 	$http.get("./api/voitures/1/consommations").success(function(data){
 		$scope.consommations=data;
+		$scope.consommations.forEach(function(element, index, array) {
+			if((index+1)<array.length)
+				element['litres_100']=(element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100;
+			else {
+				element['litres_100']=0;
+			}
+		});
 	});
 
 	$scope.toggle = function() {
@@ -191,10 +212,18 @@ app.controller('consommationController', function($rootScope, $scope, $http, $lo
 	}
 
 	$scope.addConsommation = function() {
-		$http.post("./api/create/consommations", {date: $scope.form.date.toISOString().substring(0, 10), prix: $scope.form.prix, litres: $scope.form.litres, id_voiture: "1"}).success(function(data){
+		$http.post("./api/create/consommations", {date: $scope.form.date.toISOString().substring(0, 10), prix: $scope.form.prix, compteur_km: $scope.form.compteur_km, litres: $scope.form.litres, id_voiture: "1"}).success(function(data){
 			$scope.consommations.unshift(data);
+			$scope.consommations.forEach(function(element, index, array) {
+				if((index+1)<array.length)
+					element['litres_100']=(element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100;
+				else {
+					element['litres_100']=0;
+				}
+			});
 			$scope.form.date = new Date();
 			$scope.form.prix = '';
+			$scope.form.compteur_km = '';
 			$scope.form.litres = '';
 		});
 	}
