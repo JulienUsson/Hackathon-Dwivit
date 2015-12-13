@@ -100,8 +100,8 @@ app.controller('statistiqueController', function($scope, $http) {
 app.controller('consommationController', function($scope, $http) {
 	$scope.form=[];
 	$scope.form.date = new Date();
-	$scope.form.prix = 0;
-	$scope.form.litres=0;
+	$scope.form.prix = '';
+	$scope.form.litres = '';
 	$scope.status=[];
 	$scope.status.opened=false;
 
@@ -118,8 +118,8 @@ app.controller('consommationController', function($scope, $http) {
 		$http.post("./api/create/consommations", {date: $scope.form.date.toISOString().substring(0, 10), prix: $scope.form.prix, litres: $scope.form.litres, id_voiture: "1"}).success(function(data){
 			$scope.consommations.unshift(data);
 			$scope.form.date = new Date();
-			$scope.form.prix = 0;
-			$scope.form.litres=0;
+			$scope.form.prix = '';
+			$scope.form.litres = '';
 		});
 	}
 });

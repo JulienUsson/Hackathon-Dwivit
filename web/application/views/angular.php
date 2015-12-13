@@ -67,12 +67,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</nav>
 
 		<div class="container-fluid">
-			<div ng-show="loggedIn" class="row">
+			<div ng-show="loggedIn" class="row padding">
 				<div class="alertes" ng-controller="alerteController">
 					<uib-alert ng-repeat="alerte in alertes" type="{{alerte.type}}" close="closeAlert($index)">{{alerte.message}}</uib-alert>
 				</div>
 			</div>
-			<div class="row">
+			<div>
 				<div ng-view></div>
 			</div>
 		</div>

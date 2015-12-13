@@ -12,6 +12,24 @@ body {
   margin: auto;
 }
 
+
+.row.padding {
+  padding: 0 5%;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.padding-bottom {
+  padding-bottom: 10px !important;
+}
+
+.header {
+  text-transform: uppercase;
+  border-bottom: 1px solid #3E9A3A;
+}
+
 .texte h1 {
   text-transform: uppercase;
   border-bottom: 1px solid #3E9A3A;
