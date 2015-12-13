@@ -31,12 +31,15 @@ app.run(function($rootScope) {
     $rootScope.loggedIn=false;
 });
 
-app.controller('homeController', function($rootScope, $scope, $http, $sce) {
+app.controller('homeController', function($rootScope, $scope, $http, $sce, $location) {
 	$scope.slides=[
 		{image: "assets/img/slide1.jpg", titre: $sce.trustAsHtml('Un forfait <span class="jaune">tout compris</span>'), texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
 		{image: "assets/img/slide2.jpg", titre: $sce.trustAsHtml('Une solution <span class="jaune">simple</span>'), texte: "Vous adaptez votre forfait à votre véhicule."},
 		{image: "assets/img/slide3.jpg", titre: $sce.trustAsHtml('Pas de mauvaise <span class="jaune">surprise</span>'), texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
 	];
+
+	if($rootScope.loggedIn)
+		$location.url('/compte');
 });
 
 app.controller('menuController', function($rootScope, $scope, $http, $location, $anchorScroll, $window) {
@@ -62,7 +65,10 @@ app.controller('menuController', function($rootScope, $scope, $http, $location, 
 	}
 });
 
-app.controller('compteController', function($scope, $http) {
+app.controller('compteController', function($rootScope, $scope, $http, $location) {
+	if(!$rootScope.loggedIn)
+		$location.url('/');
+
 	$scope.user={};
 	$http.get("./api/users/1/").success(function(data){
 		$scope.user=data;
@@ -85,7 +91,10 @@ app.controller('alerteController', function($rootScope, $scope) {
 	};
 });
 
-app.controller('reparationController', function($scope, $http) {
+app.controller('reparationController', function($rootScope, $scope, $http, $location) {
+	if(!$rootScope.loggedIn)
+		$location.url('/');
+
 	$scope.reparations=[];
 	$http.get("./api/voitures/1/reparations").success(function(data){
 		$scope.reparations=data;
@@ -97,7 +106,10 @@ app.controller('reparationController', function($scope, $http) {
 	});
 });
 
-app.controller('statistiqueController', function($scope, $http) {
+app.controller('statistiqueController', function($rootScope, $scope, $http, $location) {
+	if(!$rootScope.loggedIn)
+		$location.url('/');
+
 	$scope.reparations=[];
 	$http.get("./api/voitures/1/reparations").success(function(data){
 		$scope.reparations=data;
@@ -110,7 +122,10 @@ app.controller('statistiqueController', function($scope, $http) {
 });
 
 
-app.controller('consommationController', function($scope, $http) {
+app.controller('consommationController', function($rootScope, $scope, $http, $location) {
+	if(!$rootScope.loggedIn)
+		$location.url('/');
+
 	$scope.form=[];
 	$scope.form.date = new Date();
 	$scope.form.prix = '';

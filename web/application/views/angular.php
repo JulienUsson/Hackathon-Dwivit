@@ -40,12 +40,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			        <li><a ng-click="scrollTo('services')" href="">Services</a></li>
 			        <li><a ng-click="scrollTo('reseau')" href="">Réseau</a></li>
 			      </ul>
-			      <form ng-submit="login()" class="navbar-form navbar-right" role="search">
+			      <form ng-submit="login()" class="navbar-form navbar-right">
 			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="E-mail">
+			          <input type="text" class="form-control" placeholder="E-mail" required>
 			        </div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Mot de passe">
+								<input type="password" class="form-control" placeholder="Mot de passe" required>
 							</div>
 			        <button type="submit" class="btn btn-success">Connexion</button>
 			      </form>
