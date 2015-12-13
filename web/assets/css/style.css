@@ -114,6 +114,7 @@ iframe {
 
 .carousel .carousel-inner{
   height: 500px;
+  text-transform: uppercase;
 }
 
 .carousel img {
