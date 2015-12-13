@@ -115,14 +115,36 @@ app.controller('statistiqueController', function($rootScope, $scope, $http, $loc
 	if(!$rootScope.loggedIn)
 		$location.url('/');
 
-	$scope.reparations=[];
-	$http.get("./api/voitures/1/reparations").success(function(data){
-		$scope.reparations=data;
-	});
+	$scope.graphs=[];
+	$scope.graphs.consoQte=[];
+	$scope.graphs.consoQte.series = ['Quantité en litre'];
+	$scope.graphs.consoQte.labels=[];
+	$scope.graphs.consoQte.data=[];
+	$scope.graphs.consoPrix=[];
+	$scope.graphs.consoPrix.series = ['Prix au litre'];
+	$scope.graphs.consoPrix.labels=[];
+	$scope.graphs.consoPrix.data=[];
+	$scope.graphs.reparation=[];
+	$scope.graphs.reparation.series = ["Nombre d'intervention"];
+	$scope.graphs.reparation.labels=[];
+	$scope.graphs.reparation.data=[];
 
-	$scope.consommations=[];
+	$scope.graphs.reparation.labels = ['06/2015', '07/2015', '08/2015', '09/2015', '10/2015', '11/2015', '12/2015'];
+	$scope.graphs.reparation.data = [
+		[0, 0, 0, 1, 0, 1, 0]
+	];
+
 	$http.get("./api/voitures/1/consommations").success(function(data){
-		$scope.consommations=data;
+		var prix=[];
+		var quantite=[];
+		data.forEach(function(element, index, array) {
+			$scope.graphs.consoQte.labels.push(element["date"]);
+			prix.push(element["prix_litre"]);
+			quantite.push(element["litres"]);
+		});
+		$scope.graphs.consoQte.data=[quantite];
+		$scope.graphs.consoPrix.labels=$scope.graphs.consoQte.labels.slice();
+		$scope.graphs.consoPrix.data=[prix];
 	});
 });
 

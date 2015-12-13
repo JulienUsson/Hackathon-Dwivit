@@ -29,4 +29,12 @@ class Reparation_model extends CI_Model {
             return $this->db->order_by('date', 'DESC')
                             ->get_where($this->table, array('id_voiture' => $id_voiture));
         }
+
+        function get_stats_reparation($id_voiture)
+        {
+            return $this->db->select('YEAR(date) year, MONTH(date) month, COUNT(1) count')
+                            ->order_by('date', 'ASC')
+                            ->group_by('YEAR(date),MONTH(date)')
+                            ->get_where($this->table, array('id_voiture' => $id_voiture));
+        }
 }

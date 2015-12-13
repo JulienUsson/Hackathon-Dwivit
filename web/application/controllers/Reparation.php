@@ -40,4 +40,10 @@ class Reparation extends CI_Controller {
 			}
 			echo json_encode($response);
 		}
+
+		public function stats_reparation($id_voiture)
+		{
+			$data = $this->reparation->get_stats_reparation($id_voiture);
+			echo json_encode($data->result_array());
+		}
 }

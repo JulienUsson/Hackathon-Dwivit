@@ -71,6 +71,7 @@ $route['api/marques/(:num)/modeles'] = 'modele_voiture/view_all_marque/$1';
 $route['api/reparations'] = 'reparation';
 $route['api/reparations/(:num)'] = 'reparation/view/$1';
 $route['api/voitures/(:num)/reparations'] = 'reparation/view_all_voiture/$1';
+$route['api/voitures/(:num)/statistiques/reparations'] = 'reparation/stats_reparation/$1';
 //----------Type_reparation----------
 $route['api/reparations/types'] = 'type_reparation';
 $route['api/reparations/types/(:num)'] = 'type_reparation/view/$1';
