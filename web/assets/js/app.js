@@ -56,7 +56,9 @@ app.controller('homeController', function($rootScope, $scope, $http, $sce, $loca
 });
 
 app.controller('CommandeModalInstanceCtrl', function ($scope, $uibModalInstance, selectedForfait) {
-
+	$scope.forfaits=[{id: 0, libelle: "Starter"}, {id: 2, libelle: "Optimum"}, {id: 3, libelle: "Diesel"}];
+	$scope.forfait=1;
+	$scope.forfait = $scope.forfaits[selectedForfait].id;
   $scope.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };

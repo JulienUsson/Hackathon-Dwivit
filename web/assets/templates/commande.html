@@ -1,13 +1,50 @@
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Commander un forfait</h4>
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Commander un forfait</h4>
+  </div>
+  <div class="modal-body">
+    <div>Je souhaite un forfait
+        <select ng-model="forfait" ng-options='f.id as f.libelle for f in forfaits'></select>
+        pour mon véhicule immatriculée <input type="text" size="6"/>.</div>
+    </div>
+    <div class="row" style="padding: 0 10%;">
+    <div class="col-xs-6">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Pneu 4 saisons - 3€
+        </label>
       </div>
-      <div class="modal-body">
-        <p>Je souhaite un forfait pour mon véhicule immatriculée .</p>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Rous hiver - 5€
+        </label>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
-        <button type="button" class="btn btn-primary" ng-click="cancel()">Valider</button>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Option 20 000km - 3€
+        </label>
       </div>
-    </div><!-- /.modal-content -->
+    </div>
+    <div class="col-xs-6">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Option rous 15" - 3€
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Option rous 16" - 3€
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Option 25 000km - 5€
+        </label>
+      </div>
+    </div></div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="cancel()">Annuler</button>
+    <button type="button" class="btn btn-primary" ng-click="cancel()">Valider</button>
+  </div>
+</div><!-- /.modal-content -->
