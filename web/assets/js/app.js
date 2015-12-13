@@ -7,8 +7,8 @@ app.config(function($routeProvider) {
 			controller  : 'homeController'
     }).
 		when('/compte', {
-			templateUrl : './assets/templates/gestion.html',
-			controller  : 'gestionController'
+			templateUrl : './assets/templates/compte.html',
+			controller  : 'compteController'
 		}).
 		when('/compte/reparation', {
 			templateUrl : './assets/templates/reparation.html',
@@ -62,8 +62,16 @@ app.controller('menuController', function($rootScope, $scope, $http, $location, 
 	}
 });
 
-app.controller('gestionController', function($scope, $http) {
+app.controller('compteController', function($scope, $http) {
+	$scope.user={};
+	$http.get("./api/users/1/").success(function(data){
+		$scope.user=data;
+	});
 
+	$scope.voiture={};
+	$http.get("./api/voitures/1/").success(function(data){
+		$scope.voiture=data;
+	});
 });
 
 app.controller('alerteController', function($rootScope, $scope) {
@@ -81,6 +89,11 @@ app.controller('reparationController', function($scope, $http) {
 	$scope.reparations=[];
 	$http.get("./api/voitures/1/reparations").success(function(data){
 		$scope.reparations=data;
+	});
+
+	$scope.user={};
+	$http.get("./api/users/1/").success(function(data){
+		$scope.user=data;
 	});
 });
 
