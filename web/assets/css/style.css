@@ -71,7 +71,7 @@ iframe {
 }
 
 .texte h1 {
-  font-variant: small-caps;
+  text-transform: uppercase;
   border-bottom: 1px solid #3E9A3A;
 }
 
@@ -91,7 +91,7 @@ iframe {
   line-height: 55px;
   text-align: center;
   color: white;
-    text-transform: uppercase;
+  font-variant: small-caps;
 }
 
 .footer {
