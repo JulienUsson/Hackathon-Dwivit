@@ -203,8 +203,11 @@ app.controller('consommationController', function($rootScope, $scope, $http, $lo
 	$http.get("./api/voitures/1/consommations").success(function(data){
 		$scope.consommations=data;
 		$scope.consommations.forEach(function(element, index, array) {
-			if((index+1)<array.length)
-				element['litres_100']=(element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100;
+			if((index+1)<array.length) {
+
+				var nn = parseFloat((element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100);
+				element['litres_100']=Number((nn).toFixed(2));
+			}
 			else {
 				element['litres_100']=0;
 			}
@@ -220,7 +223,11 @@ app.controller('consommationController', function($rootScope, $scope, $http, $lo
 			$scope.consommations.unshift(data);
 			$scope.consommations.forEach(function(element, index, array) {
 				if((index+1)<array.length)
-					element['litres_100']=(element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100;
+				{
+
+					var nn = parseFloat((element['litres']/(element['compteur_km']-array[index+1]['compteur_km']))*100);
+					element['litres_100']=Number((nn).toFixed(2));
+				}
 				else {
 					element['litres_100']=0;
 				}
