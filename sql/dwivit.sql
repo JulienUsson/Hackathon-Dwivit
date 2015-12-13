@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.4.11.1deb2+deb7u2
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Sam 12 Décembre 2015 à 17:22
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Client: localhost
+-- Généré le: Dim 13 Décembre 2015 à 10:52
+-- Version du serveur: 5.5.46
+-- Version de PHP: 5.4.45-0+deb7u2
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `dwivit`
+-- Base de données: `dwivit`
 --
 
 -- --------------------------------------------------------
@@ -31,20 +31,23 @@ CREATE TABLE IF NOT EXISTS `consommation_essence` (
   `date` date NOT NULL,
   `prix` float NOT NULL,
   `litres` float NOT NULL,
+  `compteur_km` int(11) NOT NULL,
   `id_voiture` int(11) NOT NULL,
   PRIMARY KEY (`id_consommation_essence`),
   KEY `id_vehicule` (`id_voiture`),
   KEY `id_voiture` (`id_voiture`),
   KEY `id_voiture_2` (`id_voiture`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `consommation_essence`
 --
 
-INSERT INTO `consommation_essence` (`id_consommation_essence`, `date`, `prix`, `litres`, `id_voiture`) VALUES
-(1, '2015-12-02', 38.4, 30, 1),
-(2, '2015-11-04', 46.2, 35, 1);
+INSERT INTO `consommation_essence` (`id_consommation_essence`, `date`, `prix`, `litres`, `compteur_km`, `id_voiture`) VALUES
+(9, '2015-09-01', 57.43, 41.95, 21623, 1),
+(10, '2015-10-14', 58.37, 42.3, 22274, 1),
+(11, '2015-11-12', 48.5, 37.48, 22913, 1),
+(12, '2015-12-03', 38.9, 31.37, 23396, 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `marque` (
   `id_marque` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) NOT NULL,
   PRIMARY KEY (`id_marque`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 --
 -- Contenu de la table `marque`
@@ -96,7 +99,28 @@ INSERT INTO `marque` (`id_marque`, `nom`) VALUES
 (4, 'Volkswagen'),
 (5, 'Toyota'),
 (6, 'Fiat'),
-(7, 'Hyundai');
+(7, 'Hyundai'),
+(8, 'Alfa Romeo'),
+(9, 'Audi'),
+(10, 'BMW'),
+(11, 'Citroen'),
+(12, 'Dacia'),
+(13, 'Chevrolet'),
+(14, 'Ford'),
+(15, 'Honda'),
+(16, 'Kia'),
+(17, 'Lada'),
+(18, 'Lancia'),
+(19, 'Mazda'),
+(20, 'Mercedes-Benz'),
+(21, 'Mini'),
+(22, 'Mitsubishi'),
+(23, 'Nissan'),
+(24, 'Seat'),
+(25, 'Skoda'),
+(26, 'Smart'),
+(27, 'Suzuki'),
+(28, 'Subaru');
 
 -- --------------------------------------------------------
 
@@ -111,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `modele_voiture` (
   PRIMARY KEY (`id_modele_voiture`),
   KEY `id_marque` (`id_marque`),
   KEY `id_marque_2` (`id_marque`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
 
 --
 -- Contenu de la table `modele_voiture`
@@ -119,7 +143,82 @@ CREATE TABLE IF NOT EXISTS `modele_voiture` (
 
 INSERT INTO `modele_voiture` (`id_modele_voiture`, `nom`, `id_marque`) VALUES
 (1, 'Clio', 2),
-(2, 'Twingo', 2);
+(2, 'Twingo', 2),
+(5, '107', 1),
+(6, '108', 1),
+(7, '206', 1),
+(8, '206+', 1),
+(11, '207', 1),
+(12, '208', 1),
+(13, '206sw', 1),
+(14, '207sw', 1),
+(17, '207 outdoor', 1),
+(18, '2008', 1),
+(19, '1007', 1),
+(22, 'Agila', 3),
+(23, 'Corsa', 3),
+(24, 'Adam', 3),
+(25, 'Fox', 4),
+(26, 'Up!', 4),
+(28, 'Polo', 4),
+(29, 'Aygo', 5),
+(30, 'Yaris', 5),
+(31, 'Yaris Verso', 5),
+(32, 'Verso S', 5),
+(33, 'Panda', 6),
+(34, '500', 6),
+(37, 'Punto', 6),
+(38, 'Idea', 6),
+(39, 'Atos', 7),
+(40, 'i10', 7),
+(41, 'Getz', 7),
+(42, 'i20', 7),
+(43, 'ix20', 7),
+(44, 'MiTo', 8),
+(45, 'A1', 9),
+(46, 'C1', 11),
+(47, 'C2', 11),
+(48, 'C3', 11),
+(49, 'C3 Picasso', 11),
+(50, 'C4 Cactus', 11),
+(51, 'Logan', 12),
+(52, 'Logan MCV', 12),
+(53, 'Sandero', 12),
+(54, 'Sandero Stepway', 12),
+(55, 'Lodgy', 12),
+(56, 'Dokker', 12),
+(57, 'Duster', 12),
+(58, 'Matiz', 13),
+(59, 'Spark', 13),
+(60, 'Kalos', 13),
+(61, 'Aveo', 13),
+(62, 'Ka', 14),
+(63, 'Fiesta', 14),
+(64, 'Fusion', 14),
+(65, 'Jazz', 15),
+(66, 'Picanto', 16),
+(67, 'Rio', 16),
+(68, 'Ypsilon', 18),
+(69, 'Musa', 18),
+(70, '2', 19),
+(71, 'Mini', 21),
+(72, 'Space Star', 22),
+(73, 'Colt', 22),
+(74, 'Pixo', 23),
+(75, 'Micra', 23),
+(76, 'Note', 23),
+(77, 'Juke', 23),
+(78, 'Citigo', 25),
+(79, 'Fabia', 25),
+(80, 'Rapid', 25),
+(81, 'Rapid Spaceback', 25),
+(82, 'Mii', 24),
+(83, 'Ibiza', 24),
+(84, 'Fortwo', 26),
+(85, 'ForFour', 26),
+(86, 'Swift', 27),
+(87, 'Splash', 27),
+(88, 'Trezia', 28);
 
 -- --------------------------------------------------------
 
