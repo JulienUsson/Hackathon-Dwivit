@@ -31,15 +31,35 @@ app.run(function($rootScope) {
     $rootScope.loggedIn=false;
 });
 
-app.controller('homeController', function($rootScope, $scope, $http, $sce, $location) {
+app.controller('homeController', function($rootScope, $scope, $http, $sce, $location, $uibModal) {
+	if($rootScope.loggedIn)
+		$location.url('/compte');
+
 	$scope.slides=[
 		{image: "assets/img/slide1.jpg", titre: $sce.trustAsHtml('Un forfait <span class="jaune">tout compris</span>'), texte: "Vos révision, le remplacement des pièces d'usures et l'assistance sont inclus."},
 		{image: "assets/img/slide2.jpg", titre: $sce.trustAsHtml('Une solution <span class="jaune">simple</span>'), texte: "Vous adaptez votre forfait à votre véhicule."},
 		{image: "assets/img/slide3.jpg", titre: $sce.trustAsHtml('Pas de mauvaise <span class="jaune">surprise</span>'), texte: "Votre véhicule toujout prêt à rouler, en tout sécurité."}
 	];
 
-	if($rootScope.loggedIn)
-		$location.url('/compte');
+	$scope.open = function (selectedForfait) {
+    var modalInstance = $uibModal.open({
+      animation: true,
+      templateUrl: 'assets/templates/commande.html',
+      controller: 'CommandeModalInstanceCtrl',
+      resolve: {
+        selectedForfait: function () {
+          return selectedForfait;
+        }
+      }
+    });
+  };
+});
+
+app.controller('CommandeModalInstanceCtrl', function ($scope, $uibModalInstance, selectedForfait) {
+
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
 });
 
 app.controller('menuController', function($rootScope, $scope, $http, $location, $anchorScroll, $window) {
