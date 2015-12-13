@@ -42,10 +42,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			      </ul>
 			      <form ng-submit="login()" class="navbar-form navbar-right">
 			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="E-mail" required>
+			          <input type="text" ng-model="form.login" class="form-control" placeholder="E-mail" required>
 			        </div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Mot de passe" required>
+								<input type="password" ng-model="form.password" class="form-control" placeholder="Mot de passe" required>
 							</div>
 			        <button type="submit" class="btn btn-success">Connexion</button>
 			      </form>

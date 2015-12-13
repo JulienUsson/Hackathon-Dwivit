@@ -43,8 +43,13 @@ app.controller('homeController', function($rootScope, $scope, $http, $sce, $loca
 });
 
 app.controller('menuController', function($rootScope, $scope, $http, $location, $anchorScroll, $window) {
+	$scope.form=[];
+	$scope.form.login="";
+	$scope.form.password="";
+
 	$scope.login = function() {
 		$rootScope.loggedIn=true;
+		$scope.form.password="";
 		$location.url('/compte');
 	};
 
