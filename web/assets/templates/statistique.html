@@ -2,30 +2,17 @@
   <h1 class="header">Statistiques</h1>
 
   <div class="row">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Nombre d'interventions effectuées sur la voiture</div>
-        <div class="panel-body">
-          <canvas id="bar" class="chart chart-bar"
-            chart-data="graphs.reparation.data" chart-labels="graphs.reparation.labels" chart-series="series" chart-colours="['#97BBCD']"
-          </canvas>
-        </div>
-      </div>
-    </div>
 
     <div class="col-md-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Evolution de la quantité consommée en litre</div>
+        <div class="panel-heading">Evolution du litre au 100</div>
         <div class="panel-body">
-          <canvas id="line" class="chart chart-line" chart-data="graphs.consoQte.data" chart-colours="['#F7464A']"
-            chart-labels="graphs.consoQte.labels" chart-series="graphs.consoQte.series">
-          </canvas>
-        </div>
+          <canvas id="line" class="chart chart-line" chart-data="graphs.consoL100.data" chart-colours="['#46BFBD']"
+          chart-labels="graphs.consoL100.labels" chart-series="graphs.consoL100.series">
+        </canvas>
       </div>
     </div>
   </div>
-
-<div class="row">
 
   <div class="col-md-6">
     <div class="panel panel-default">
@@ -37,12 +24,29 @@
       </div>
     </div>
   </div>
+
+
+  </div>
+
+<div class="row">
+
+
   <div class="col-md-6">
     <div class="panel panel-default">
-      <div class="panel-heading">Evolution du litre au 100</div>
+      <div class="panel-heading">Evolution de la quantité consommée en litre</div>
       <div class="panel-body">
-        <canvas id="line" class="chart chart-line" chart-data="graphs.consoL100.data" chart-colours="['#46BFBD']"
-        chart-labels="graphs.consoL100.labels" chart-series="graphs.consoL100.series">
+        <canvas id="line" class="chart chart-line" chart-data="graphs.consoQte.data" chart-colours="['#F7464A']"
+          chart-labels="graphs.consoQte.labels" chart-series="graphs.consoQte.series">
+        </canvas>
+      </div>
+    </div>
+  </div>
+<div class="col-md-6">
+  <div class="panel panel-default">
+    <div class="panel-heading">Nombre d'interventions effectuées sur la voiture</div>
+    <div class="panel-body">
+      <canvas id="bar" class="chart chart-bar"
+        chart-data="graphs.reparation.data" chart-labels="graphs.reparation.labels" chart-series="series" chart-colours="['#97BBCD']"
       </canvas>
     </div>
   </div>
