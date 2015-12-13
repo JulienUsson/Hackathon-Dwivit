@@ -79,6 +79,15 @@ iframe {
   font-size: 20px;
 }
 
+td .titre {
+    font-style: italic;
+    font-weight: bold;
+}
+
+table.center, table.center thead th {
+    text-align: center !important;
+}
+
 .bande {
   background-color: #3E9A3A;
   padding: 75px 0;
